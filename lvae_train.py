@@ -12,7 +12,6 @@ import matplotlib.pyplot as plt
 import argparse
 import os
 import time
-from keras.utils import to_categorical
 from model import LVAE
 from omniglot import OmniglotLoader
 
@@ -93,6 +92,7 @@ beta = DeterministicWarmup(n=50, t_max=1)  # Linear warm-up from 0 to 1 over 50 
 
 def train(args, lvae):
     best_val_loss = 1000
+    os.makedirs('lvae%d'% args.lamda, exist_ok = True)
     # train
     for epoch in range(args.epochs):
         lvae.train()
