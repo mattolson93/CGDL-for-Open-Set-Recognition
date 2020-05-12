@@ -12,7 +12,6 @@ import matplotlib.pyplot as plt
 import argparse
 import os
 import time
-from keras.utils import to_categorical
 from model import LVAE
 from omniglot import OmniglotLoader
 
